@@ -29,3 +29,7 @@ Installation:
 1. Connect the components according to the provided schematic.
 2. Install the necessary libraries for the OLED display (Adafruit_SSD1306 and Adafruit_GFX).
 3. Upload the code to your Arduino board.
+
+Check the Wokwi project below: 
+
+https://wokwi.com/projects/409639789052820481
