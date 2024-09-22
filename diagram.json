@@ -1,0 +1,54 @@
+{
+  "version": 1,
+  "author": "Maciej Fedko",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-arduino-uno", "id": "uno", "top": 19.8, "left": -58.2, "attrs": {} },
+    { "type": "wokwi-led", "id": "led1", "top": -138, "left": 109.4, "attrs": { "color": "red" } },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -103.2,
+      "left": 184.2,
+      "attrs": { "volume": "0.1" }
+    },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": -52.8,
+      "left": 105.05,
+      "rotate": 90,
+      "attrs": { "value": "220" }
+    },
+    {
+      "type": "wokwi-hc-sr04",
+      "id": "ultrasonic1",
+      "top": -132.9,
+      "left": -205.7,
+      "attrs": { "distance": "252" }
+    },
+    {
+      "type": "board-ssd1306",
+      "id": "oled1",
+      "top": 281.54,
+      "left": 221.03,
+      "attrs": { "i2cAddress": "0x3c" }
+    }
+  ],
+  "connections": [
+    [ "bz1:2", "uno:6", "red", [ "v19.2", "h-80.9" ] ],
+    [ "led1:A", "r1:1", "green", [ "v0" ] ],
+    [ "r1:2", "uno:7", "green", [ "v27.6", "h-80.4" ] ],
+    [ "led1:C", "uno:GND.1", "black", [ "h-28.4", "v76.8", "h-38.7" ] ],
+    [ "ultrasonic1:VCC", "uno:5V", "red", [ "v307.2", "h240" ] ],
+    [ "ultrasonic1:GND", "uno:GND.2", "black", [ "v278.4", "h215.7" ] ],
+    [ "ultrasonic1:TRIG", "uno:9", "green", [ "v48", "h230" ] ],
+    [ "ultrasonic1:ECHO", "uno:10", "green", [ "v38.4", "h210.4" ] ],
+    [ "bz1:1", "uno:GND.1", "black", [ "v9.6", "h-153.6" ] ],
+    [ "oled1:GND", "uno:GND.3", "black", [ "v-9.6", "h-220.8" ] ],
+    [ "oled1:VCC", "uno:5V", "red", [ "v-19.2", "h-239.85" ] ],
+    [ "oled1:SDA", "uno:A4", "green", [ "v-48", "h-182.33" ] ],
+    [ "oled1:SCL", "uno:A5", "green", [ "v-38.4", "h-153.3" ] ]
+  ],
+  "dependencies": {}
+}
